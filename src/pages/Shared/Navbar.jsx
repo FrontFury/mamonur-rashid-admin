@@ -27,10 +27,10 @@ import {
 } from "lucide-react";
 import useAuth from "../../hook/useAuth";
 
-const Navbar = ({ isOpen, setIsOpen, }) => {
+const Navbar = ({ isOpen, setIsOpen }) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-      const { logout } = useAuth();
+  const { logout } = useAuth();
 
   const navItems = [
     { id: "users", label: "Users", icon: Users, path: "/admin/all-users" },
@@ -77,7 +77,7 @@ const Navbar = ({ isOpen, setIsOpen, }) => {
       {isOpen && (
         <div
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          className="fixed inset-0 bg-slate-900/30 backdrop-blur-sm z-40 lg:hidden transition-opacity"
         />
       )}
 
@@ -85,12 +85,12 @@ const Navbar = ({ isOpen, setIsOpen, }) => {
       <aside
         className={`
           fixed z-50 transition-all duration-300 ease-in-out
-          top-20 right-4 left-4 flex flex-col p-2.5
-          bg-[#163A2D]/95 backdrop-blur-xl border border-emerald-800/60 rounded-2xl shadow-2xl gap-1.5 
+          top-20 right-4 left-4 flex flex-col p-3
+          bg-white/90 backdrop-blur-2xl border border-emerald-100/90 rounded-3xl shadow-2xl shadow-emerald-950/10 gap-1.5 
           max-h-[75vh] overflow-y-auto
 
           /* LARGE SCREEN ADJUSTMENTS */
-          lg:left-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-4 lg:w-auto lg:items-end lg:gap-1 lg:bg-transparent lg:border-none lg:p-0 lg:shadow-none lg:backdrop-blur-none 
+          lg:left-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-4 lg:w-auto lg:items-end lg:gap-1.5 lg:bg-transparent lg:border-none lg:p-0 lg:shadow-none lg:backdrop-blur-none 
           lg:max-h-[calc(100vh-2rem)] lg:pr-1 lg:py-2
           
           [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden
@@ -112,12 +112,12 @@ const Navbar = ({ isOpen, setIsOpen, }) => {
               end={item.path === "/"}
               onClick={() => setIsOpen(false)}
               className={({ isActive }) => `
-                group relative flex items-center transition-all duration-150 ease-in-out w-full lg:w-auto
+                group relative flex items-center transition-all duration-200 ease-in-out w-full lg:w-auto
 
                 ${
                   isActive
-                    ? `bg-[#0C2219] text-amber-300 font-semibold px-3 py-1.5 lg:py-1.5 lg:px-2.5 rounded-xl border border-amber-400/50 shadow-md shadow-amber-500/10 justify-start lg:justify-center`
-                    : `text-emerald-100 hover:text-amber-200 hover:bg-emerald-900/60 p-2 lg:p-1.5 lg:px-2 rounded-xl lg:bg-[#163A2D]/90 lg:border lg:border-emerald-800/60 lg:backdrop-blur-md justify-start lg:justify-center`
+                    ? `bg-gradient-to-r from-emerald-800 to-[#163A2D] text-amber-300 font-semibold px-3.5 py-2 lg:py-2 lg:px-3.5 rounded-2xl border border-emerald-700/50 shadow-lg shadow-emerald-900/20 justify-start lg:justify-center`
+                    : `text-slate-700 hover:text-emerald-900 hover:bg-emerald-50/80 p-2.5 lg:p-2 lg:px-3 rounded-2xl lg:bg-white/80 lg:border lg:border-slate-200/80 lg:backdrop-blur-xl lg:shadow-sm justify-start lg:justify-center`
                 }
               `}
             >
@@ -125,14 +125,14 @@ const Navbar = ({ isOpen, setIsOpen, }) => {
                 <>
                   <Icon
                     className={`w-4 h-4 sm:w-4 sm:h-4 lg:w-[18px] lg:h-[18px] shrink-0 transition-colors duration-200 ${
-                      isActive ? "text-amber-400 stroke-[2.5]" : "text-emerald-100 group-hover:text-amber-300 stroke-2"
+                      isActive ? "text-amber-400 stroke-[2.5]" : "text-slate-600 group-hover:text-emerald-700 stroke-2"
                     }`}
                   />
 
                   {/* Responsive Label */}
                   <span
-                    className={`ml-3 text-sm whitespace-nowrap tracking-wide font-['Playfair_Display',serif] ${
-                      isActive ? "inline-block text-amber-300 font-bold" : "inline-block lg:hidden text-white"
+                    className={`ml-3 text-sm whitespace-nowrap tracking-wide font-medium ${
+                      isActive ? "inline-block text-amber-300 font-bold" : "inline-block lg:hidden text-slate-800"
                     }`}
                   >
                     {item.label}
@@ -140,7 +140,7 @@ const Navbar = ({ isOpen, setIsOpen, }) => {
 
                   {/* Desktop Hover Tooltip */}
                   {!isActive && (
-                    <span className="hidden lg:block absolute right-12 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none bg-[#163A2D] text-amber-300 text-xs py-1 px-2.5 rounded-lg border border-amber-400/40 whitespace-nowrap shadow-xl font-['Playfair_Display',serif] font-semibold">
+                    <span className="hidden lg:block absolute right-12 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none bg-[#163A2D] text-amber-300 text-xs py-1.5 px-3 rounded-xl border border-emerald-700/50 whitespace-nowrap shadow-xl font-medium">
                       {item.label}
                     </span>
                   )}
@@ -153,15 +153,15 @@ const Navbar = ({ isOpen, setIsOpen, }) => {
         {/* LOGOUT BUTTON */}
         <button
           onClick={onLogoutClick}
-          className="group relative flex items-center transition-all duration-150 ease-in-out w-full lg:w-auto p-2 lg:p-1.5 lg:px-2 rounded-xl text-red-200 hover:text-red-300 hover:bg-red-900/60 lg:bg-[#163A2D]/90 lg:border lg:border-emerald-800/60 lg:backdrop-blur-md justify-start lg:justify-center cursor-pointer mt-0.5"
+          className="group relative flex items-center transition-all duration-200 ease-in-out w-full lg:w-auto p-2.5 lg:p-2 lg:px-3 rounded-2xl text-rose-600 hover:text-rose-700 hover:bg-rose-50/80 lg:bg-white/80 lg:border lg:border-slate-200/80 lg:backdrop-blur-xl lg:shadow-sm justify-start lg:justify-center cursor-pointer mt-1"
         >
-          <LogOut className="w-4 h-4 sm:w-4 sm:h-4 lg:w-[18px] lg:h-[18px] shrink-0 text-red-400 stroke-2 group-hover:text-red-300 transition-colors" />
+          <LogOut className="w-4 h-4 sm:w-4 sm:h-4 lg:w-[18px] lg:h-[18px] shrink-0 text-rose-500 stroke-2 group-hover:text-rose-600 transition-colors" />
 
-          <span className="ml-3 text-sm whitespace-nowrap tracking-wide font-['Playfair_Display',serif] inline-block lg:hidden font-bold text-red-300">
+          <span className="ml-3 text-sm whitespace-nowrap tracking-wide font-bold text-rose-600 inline-block lg:hidden">
             Logout
           </span>
 
-          <span className="hidden lg:block absolute right-12 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none bg-[#163A2D] text-red-300 text-xs py-1 px-2.5 rounded-lg border border-red-500/40 whitespace-nowrap shadow-xl font-['Playfair_Display',serif] font-semibold">
+          <span className="hidden lg:block absolute right-12 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none bg-rose-950 text-rose-200 text-xs py-1.5 px-3 rounded-xl border border-rose-800/50 whitespace-nowrap shadow-xl font-semibold">
             Logout
           </span>
         </button>
