@@ -6,6 +6,8 @@ import Register from "../pages/Auth/Register";
 import ProtectedRoute from "./ProtectedRoute";
 import AddResearch from "../pages/AddResearch/AddResearch";
 import AllResearch from "../pages/AllResearch/AllResearch";
+import AllExperience from "../pages/AllExperience/AllExperience";
+import AddExperience from "../pages/AddExperience/AddExperience";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +40,14 @@ export const router = createBrowserRouter([
           {
             path: "research/all", 
             element: <AllResearch/>
+          },
+          {
+            path: "/experience/add", 
+            element: <AddExperience/>
+          },
+          {
+            path: "/experience/all", 
+            element: <AllExperience/>
           },
         ],
       },
