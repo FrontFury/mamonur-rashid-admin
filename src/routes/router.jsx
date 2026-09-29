@@ -4,6 +4,8 @@ import Users from "../pages/Users/Users";
 import Login from "../pages/Auth/Login";
 import Register from "../pages/Auth/Register";
 import ProtectedRoute from "./ProtectedRoute";
+import AddResearch from "../pages/AddResearch/AddResearch";
+import AllResearch from "../pages/AllResearch/AllResearch";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ export const router = createBrowserRouter([
           {
             path: "admin/all-users",
             element: <Users />,
+          },
+          {
+            path: "research/add", 
+            element: <AddResearch/>
+          },
+          {
+            path: "research/all", 
+            element: <AllResearch/>
           },
         ],
       },

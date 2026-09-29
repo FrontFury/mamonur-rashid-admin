@@ -34,8 +34,8 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 
   const navItems = [
     { id: "users", label: "Users", icon: Users, path: "/admin/all-users" },
-    { id: "add-membership", label: "Add MemberShip", icon: UserGroup, path: "/membership/add" },
-    { id: "all-membership", label: "All MemberShip", icon: UserRoundKey, path: "/membership/all" },
+    { id: "add-membership", label: "Add Research", icon: UserGroup, path: "/research/add" },
+    { id: "all-membership", label: "Manage Research", icon: UserRoundKey, path: "/research/all" },
     { id: "add-award", label: "Add Award", icon: Award, path: "/award/add" },
     { id: "all-award", label: "All Award", icon: Trophy, path: "/award/all" },
     { id: "add-project-supervision", label: "Add Project Supervision", icon: FolderPlus, path: "/project-supervision/add" },
@@ -44,8 +44,6 @@ const Navbar = ({ isOpen, setIsOpen }) => {
     { id: "all-experience", label: "All Experience", icon: History, path: "/experience/all" },
     { id: "add-tools", label: "Add Tools", icon: Wrench, path: "/tools/add" },
     { id: "all-tools", label: "All Tools", icon: Boxes, path: "/tools/all" },
-    { id: "add-research", label: "Add Research", icon: BookOpen, path: "/research/add" },
-    { id: "all-research", label: "All Research", icon: Library, path: "/research/all" },
     { id: "add-courses", label: "Add Courses", icon: GraduationCap, path: "/courses/add" },
     { id: "all-courses", label: "All Courses", icon: School, path: "/courses/all" },
     { id: "add-academic", label: "Add Academic", icon: GraduationCap, path: "/academic/add" },
