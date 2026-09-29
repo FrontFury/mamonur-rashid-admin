@@ -12,6 +12,8 @@ import AddDevelopment from "../pages/AddDevelopment/AddDevelopment";
 import AllDevelopment from "../pages/AllDevelopment/AllDevelopment";
 import AddAcademic from "../pages/AddAcademic/AddAcademic";
 import AllAcademic from "../pages/AllAcademic/AllAcademic";
+import AddSkills from "../pages/AddSkills/AddSkills";
+import AllSkills from "../pages/AllSkills/AllSkills";
 
 export const router = createBrowserRouter([
   {
@@ -68,6 +70,14 @@ export const router = createBrowserRouter([
           {
             path: "/academics/all", 
             element: <AllAcademic/>
+          },
+          {
+            path: "/skills/add", 
+            element: <AddSkills/>
+          },
+          {
+            path: "/skills/all", 
+            element: <AllSkills/>
           },
         ],
       },
