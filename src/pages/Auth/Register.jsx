@@ -32,8 +32,8 @@ const Register = () => {
       return res.data;
     },
     onSuccess: () => {
-      // Database-এ successfully save হওয়ার পর redirect হবে
-      navigate("/admin/all-users");
+      // Database-এ successfully save হওয়ার পর /login এ redirect হবে
+      navigate("/login");
     },
     onError: (error) => {
       setServerError(error?.response?.data?.message || error?.message || "Failed to save user data.");
@@ -46,11 +46,12 @@ const Register = () => {
       // ১. Firebase / Auth System-এ User Register করা
       const result = await registerUser(data.email, data.password, data.fullName);
 
-      // ২. Database-এ পাঠানোর জন্য User Object তৈরি করা
+      // ২. Database-এ পাঠানোর জন্য User Object তৈরি করা
       const newUser = {
         name: data.fullName,
         email: data.email,
         uid: result?.user?.uid, 
+        role: "user", // Default Role
         createdAt: new Date().toISOString(),
       };
 
@@ -62,7 +63,7 @@ const Register = () => {
     }
   };
 
-  // Auth processing অথবা Database post-এর সময় loading state
+  // Auth processing অথবা Database post-এর সময় loading state
   const isPending = saveUserMutation.isPending;
 
   return (
