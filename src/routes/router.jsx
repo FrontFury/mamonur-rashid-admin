@@ -8,6 +8,8 @@ import AddResearch from "../pages/AddResearch/AddResearch";
 import AllResearch from "../pages/AllResearch/AllResearch";
 import AllExperience from "../pages/AllExperience/AllExperience";
 import AddExperience from "../pages/AddExperience/AddExperience";
+import AddDevelopment from "../pages/AddDevelopment/AddDevelopment";
+import AllDevelopment from "../pages/AllDevelopment/AllDevelopment";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ export const router = createBrowserRouter([
           {
             path: "/experience/all", 
             element: <AllExperience/>
+          },
+          {
+            path: "/development/add", 
+            element: <AddDevelopment/>
+          },
+          {
+            path: "/development/all", 
+            element: <AllDevelopment/>
           },
         ],
       },
