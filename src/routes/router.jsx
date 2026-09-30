@@ -16,6 +16,8 @@ import AddSkills from "../pages/AddSkills/AddSkills";
 import AllSkills from "../pages/AllSkills/AllSkills";
 import AddHonorsNAwards from "../pages/AddHonorsNAwards/AddHonorsNAwards";
 import AllHonorsNAwards from "../pages/AllHonorsNAwards/AllHonorsNAwards";
+import AddVoluntaryWork from "../pages/AddVoluntaryWork/AddVoluntaryWork";
+import AllVoluntaryWork from "../pages/AllVoluntaryWork/AllVoluntaryWork";
 
 export const router = createBrowserRouter([
   {
@@ -88,6 +90,14 @@ export const router = createBrowserRouter([
           {
             path: "/awards/all", 
             element: <AllHonorsNAwards/>
+          },
+          {
+            path: "/voluntary-work/add", 
+            element: <AddVoluntaryWork/>
+          },
+          {
+            path: "/voluntary-work/all", 
+            element: <AllVoluntaryWork/>
           },
         ],
       },
