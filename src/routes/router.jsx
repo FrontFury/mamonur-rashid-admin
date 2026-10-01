@@ -18,6 +18,8 @@ import AddHonorsNAwards from "../pages/AddHonorsNAwards/AddHonorsNAwards";
 import AllHonorsNAwards from "../pages/AllHonorsNAwards/AllHonorsNAwards";
 import AddVoluntaryWork from "../pages/AddVoluntaryWork/AddVoluntaryWork";
 import AllVoluntaryWork from "../pages/AllVoluntaryWork/AllVoluntaryWork";
+import AddGallery from "../pages/AddGallery/AddGallery";
+import AllGallery from "../pages/AllGallery/AllGallery";
 
 export const router = createBrowserRouter([
   {
@@ -98,6 +100,14 @@ export const router = createBrowserRouter([
           {
             path: "/voluntary-work/all", 
             element: <AllVoluntaryWork/>
+          },
+          {
+            path: "/gallery/add", 
+            element: <AddGallery/>
+          },
+          {
+            path: "/gallery/all", 
+            element: <AllGallery/>
           },
         ],
       },

@@ -48,8 +48,6 @@ const Navbar = ({ isOpen, setIsOpen }) => {
     { id: "all-courses", label: "All Awards", icon: School, path: "/awards/all" },
     { id: "add-academic", label: "Add Voluntary Work", icon: GraduationCap, path: "/voluntary-work/add" },
     { id: "all-academics", label: "All Voluntary Work", icon: School, path: "/voluntary-work/all" },
-    { id: "add-workshops", label: "Add Workshops", icon: Presentation, path: "/workshops/add" },
-    { id: "all-workshops", label: "All Workshops", icon: MonitorPlay, path: "/workshops/all" },
     { id: "add-gallery", label: "Add Gallery", icon: Image, path: "/gallery/add" },
     { id: "all-gallery", label: "All Gallery", icon: FolderKanban, path: "/gallery/all" },
     { id: "add-referees", label: "Add Referees", icon: UserCheck, path: "/referees/add" },
