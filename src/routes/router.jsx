@@ -20,6 +20,8 @@ import AddVoluntaryWork from "../pages/AddVoluntaryWork/AddVoluntaryWork";
 import AllVoluntaryWork from "../pages/AllVoluntaryWork/AllVoluntaryWork";
 import AddGallery from "../pages/AddGallery/AddGallery";
 import AllGallery from "../pages/AllGallery/AllGallery";
+import AddReferences from "../pages/AddReferences/AddReferences";
+import AllReferences from "../pages/AllReferences/AllReferences";
 
 export const router = createBrowserRouter([
   {
@@ -108,6 +110,14 @@ export const router = createBrowserRouter([
           {
             path: "/gallery/all", 
             element: <AllGallery/>
+          },
+          {
+            path: "/referees/add", 
+            element: <AddReferences/>
+          },
+          {
+            path: "/referees/all", 
+            element: <AllReferences/>
           },
         ],
       },
